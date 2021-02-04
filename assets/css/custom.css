@@ -1,0 +1,177 @@
+[v-cloak] {
+    display: none;
+}
+
+/* Color Override */
+body {
+    background-color: #212d42;
+}
+
+#sidebar {
+    background: #212d42 !important;
+}
+
+.wrapper.style2 {
+    background-color: #3E84FF !important;
+}
+
+.wrapper.style3 {
+    background-color: rgb(27, 52, 92) !important;
+}
+
+.wrapper.style4 {
+    /*background-color: #8BB5FF;*/
+    background-color: rgba(139, 181, 255, 0.9);
+}
+
+.wrapper.style5 {
+    background-color: #326ACC;
+}
+
+.wrapper.style1-alt {
+    background-color: #455B7F !important;
+}
+
+#sidebar nav a:before {
+    background: #455B7F;
+}
+
+#sidebar nav a:after {
+    background-image: -moz-linear-gradient(to right, #3E84FF, #8BB5FF);
+    background-image: -webkit-linear-gradient(to right, #3E84FF, #8BB5FF);
+    background-image: -ms-linear-gradient(to right, #3E84FF, #8BB5FF);
+    background-image: linear-gradient(to right, #3E84FF, #8BB5FF);
+}
+
+#footer li {
+    color: white;
+}
+
+/* IMG 黑影 */
+.spotlights>section>.image:before {
+    background: rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Rounded avatars */
+.avatar {
+    float: left;
+    margin-top: 1em;
+    margin-right: 1em;
+    position: relative;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+
+    -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0, 0, 0, .2);
+}
+
+.avatar_container {
+    margin: 1em 1em 1em 1em;
+}
+
+span.reverse {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+}
+
+.my_experince_section {
+    min-height: 10em !important;
+}
+
+.my_experince_section h2 {
+    font-size: 1.2em !important;
+}
+
+.my_works_section h2 {
+    font-size: 1.5em !important;
+}
+
+.my_experince_section p {
+    margin-bottom: 1.5em !important;
+}
+
+.exp_date {
+    font-weight: bold;
+    color: white;
+}
+
+.section_bg {
+    background-image: url("../../images/bg_large.jpg");
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Background image dim */
+.overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.work_image {
+    background-color: white;
+}
+
+.work_image:hover {
+    background-size: contain;
+}
+
+#about_me h1 {
+    margin-bottom: 0.3em !important;
+}
+
+.spotlights>section:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.spotlights>section:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#sidebar nav a {
+    font-size: 0.6em;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.button {
+    border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript,
+if it's not present, don't show loader */
+.no-js #loader {
+    display: none;
+}
+
+.js #loader {
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 0;
+}
+
+.se-pre-con {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(../../images/Preloader_2.gif) center no-repeat #fff;
+}

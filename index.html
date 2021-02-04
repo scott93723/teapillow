@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>About thor liu</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="outdated-browser/outdatedbrowser/outdatedbrowser.min.css">
+
+  <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/custom.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+</head>
+
+<body>
+
+  <!-- Loading Icon -->
+  <div class="se-pre-con"></div>
+
+  <!-- Sidebar -->
+  <section id="sidebar" v-cloak>
+    <div class="inner">
+      <nav>
+        <ul>
+          <li>
+            <a href="#about_me">{{ about_me }}</a>
+          </li>
+          <li>
+            <a href="#my_works">{{ my_works }}</a>
+          </li>
+          <li>
+            <a href="#what_i_know">{{ what_i_know }}</a>
+          </li>
+          <li>
+            <a href="#my_experince">{{ my_experience }}</a>
+          </li>
+          <li>
+            <a href="#contact_me">{{ contact_me }}</a>
+          </li>
+          <!-- <li>
+            <a href="#" id="link_to_slide">{{ my_slides }}</a>
+          </!-->
+          <li>
+            <a href="#" class="switch_lang" data-target="{{ target_lang }}">{{ switch_lang }}</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Wrapper -->
+  <div id="wrapper">
+
+    <!-- about_me -->
+    <section id="about_me" class="wrapper section_bg fullscreen fade-up" v-cloak>
+
+      <div class="overlay"></div>
+      <div class="inner">
+        <h1>Ian Chang</h1>
+        <p>{{ quote }}</p>
+        <ul class="actions">
+          <li>
+            <a href="#my_works" class="button scrolly">{{ learn_more }}</a>
+          </li>
+          <li>
+            <a href="https://mix-liten.github.io/" target="_blank" class="button scrolly">{{ visit_blog }}</a>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- my_works -->
+    <section id="my_works" class="wrapper style2 spotlights">
+
+      <section id="my_works_section" class="my_works_section" v-for="work in work_list">
+        <a href="{{ item.link_to }}" target="_blank" class="disable-link work_image image">
+          <img :src="work.img_src" class="" data-position="center center" />
+        </a>
+        <div class="content">
+          <div class="inner">
+            <h2>{{ work.title }}</h2>
+            <p>{{ work.text }}</p>
+            <ul class="actions" v-if="work.enabled">
+              <li v-for="item in work.buttons">
+                <a href="{{ item.link_to }}" target="_blank" class="button">{{ item.link_text }}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </section>
+
+    <!-- what_i_know -->
+    <section id="what_i_know" class="wrapper style3 fade-up">
+      <div class="inner">
+        <h2>{{ what_i_know }}</h2>
+        <p>{{ text }}</p>
+        <div class="features">
+          <section v-for="skill in skills">
+            <span class="icon major fa-{{ skill.icon }}"></span>
+            <h3>{{ skill.title }}</h3>
+            <p>{{ skill.text }}</p>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- my_experince -->
+    <section id="my_experince" class="wrapper style4 spotlights">
+      <section class="my_experince_section" id="my_experince_section" v-for="exp in experiences">
+        <div class="content">
+          <div class="inner">
+            <h2>{{ exp.title }}</h2>
+            <p v-show="exp.text !== ''">{{{ exp.text }}}</p>
+            <p v-show="exp.list.length > 0">
+              <ul>
+                <li v-for="row in exp.list">{{ row }}</li>
+              </ul>
+            </p>
+            <ul class="actions">
+              <li>
+                <a href="#" class="disable-link button special">{{ exp.date }}</a>
+              </li>
+              <li>
+                <a href="{{ exp.link }}" target="_blank" class="button">{{ exp.link_text }}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- contact_me -->
+    <section id="contact_me" class="wrapper style5 fade-up">
+      <div class="inner">
+        <h2>Contact Me</h2>
+        <section>
+          <ul class="contact">
+            <!-- <li>
+              <h3>Address</h3>
+              <span>POBOX 24 (NTUST POST OFFICE)
+                <br /> Taipei City 10607
+                <br /> Taiwan
+              </span>
+            </li> -->
+            <li>
+              <h3>Email</h3>
+              <span class="reverse">think93723@gmail.com</span>
+            </li>
+            <li>
+              <h3>Social Network</h3>
+              <ul class="icons">
+                <li>
+                  <a href="https://github.com/Mix-Liten" target="_blank" class="fa-github">
+                    <span class="label">GitHub</span>
+                  </a>
+                </li>
+                <!-- <li>
+                  <a href="https://www.linkedin.com/in/" target="_blank" class="fa-linkedin">
+                    <span class="label">LinkedIn</span>
+                  </a>
+                </li> -->
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer" class="wrapper style1-alt">
+    <div class="inner">
+      <ul class="menu">
+        <li>&copy; 2020 thor liu. Template by:
+          <a href="http://html5up.net" target="_blank">HTML5 UP</a>
+        </li>
+        <li>Latest update: {{ latest_update }}</li>
+        <li>
+          <a href="#" class="switch_lang" data-target="{{ target_lang }}">{{ switch_lang }}</a>
+        </li>
+        <li>
+          <a href="#about_me" class="scrolly">{{ back_to_top }}</a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- ============= Outdated Browser ============= -->
+  <div id="outdated"></div>
+
+  <script src="outdated-browser/outdatedbrowser/outdatedbrowser.min.js"></script>
+  <script>
+    //event listener: DOM ready
+    function addLoadEvent(func) {
+      var oldonload = window.onload;
+      if (typeof window.onload != 'function') {
+        window.onload = func;
+      } else {
+        window.onload = function () {
+          if (oldonload) {
+            oldonload();
+          }
+          func();
+        }
+      }
+    }
+    //call plugin function after DOM ready
+    addLoadEvent(function () {
+      outdatedBrowser({
+        bgColor: '#f25648',
+        color: '#ffffff',
+        lowerThan: 'transform',
+        languagePath: 'outdated-browser/outdatedbrowser/lang/en.html'
+      })
+    });
+  </script>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/vue.min.js"></script>
+  <script src="assets/js/skel.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/content.js"></script>
+
+  <script src="assets/js/view.js"></script>
+</body>
+
+</html>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
